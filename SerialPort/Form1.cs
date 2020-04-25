@@ -2,14 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
-using System.Diagnostics;
-using System.Windows.Controls;
 using System.Management;
 
 namespace SerialPort
@@ -290,10 +285,6 @@ namespace SerialPort
                 var tList = (from n in portnames
                             join p in ports on n equals p["DeviceID"].ToString()
                             select n + " - " + p["Caption"]).ToList();
-                for (int i = 0; i < tList.Count; i++)
-                {
-
-                }
                 tList.ForEach(Console.WriteLine);
             }
         }
